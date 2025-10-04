@@ -16,6 +16,24 @@
 
   <pre id="debug"></pre>
 
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>測試付款表單</title>
+</head>
+<body>
+  <h2>報名 + 付款測試</h2>
+  <form id="orderForm">
+    <label>姓名：<input type="text" name="name" required></label><br><br>
+    <label>Email：<input type="email" name="email" required></label><br><br>
+    <label>金額：<input type="number" name="amount" value="100" required></label><br><br>
+    <label>商品名稱：<input type="text" name="item" value="測試商品" required></label><br><br>
+    <button type="submit">送出並付款</button>
+  </form>
+
+  <pre id="debug"></pre>
+
   <script>
     const GAS_URL = "https://script.google.com/macros/s/AKfycby0YZBpODsuHSGwBV3U-e095qKm_1xQgbtJhC0ubvpI5f_17VZlAoDiAy2cGJdW6Gk5vg/exec";
 
@@ -49,3 +67,6 @@
   </script>
 </body>
 </html>
+</body>
+</html>
+
