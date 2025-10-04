@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>報名表單</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width:600px; margin:auto; padding:20px; }
+    label { display:block; margin-top:12px; }
+    input, select { width:100%; padding:8px; margin-top:6px; }
+    button { margin-top:20px; padding:10px 15px; }
+  </style>
+</head>
+<body>
+  <h2>活動報名</h2>
+  <form id="orderForm">
+    <label>姓名
+      <input type="text" name="name" required>
+    </label>
+    <label>Email
+      <input type="email" name="email" required>
+    </label>
+    <label>手機
+      <input type="text" name="phone" required>
+    </label>
+    <label>票種
+      <select name="ticket" required>
+        <option value="">請選擇</option>
+        <option value="600">600 元</option>
+        <option value="800">800 元</option>
+        <option value="1200">1200 元</option>
+      </select>
+    </label>
+    <button type="submit">送出並付款</button>
+  </form>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", async function(e){
+      e.preventDefault();
+      const formData = new FormData(this);
+      const obj = {};
+      formData.forEach((v,k)=>obj[k]=v);
+
+      try {
+        let res = await fetch("https://script.google.com/macros/s/AKfycby0YZBpODsuHSGwBV3U-e095qKm_1xQgbtJhC0ubvpI5f_17VZlAoDiAy2cGJdW6Gk5vg/exec", {
+          method:"POST",
+          body: JSON.stringify(obj)
+        });
+        let data = await res.json();
+        if(data.success){
+          window.location.href = data.paymentUrl; // 直接跳轉到綠界付款頁
+        } else {
+          alert("建立訂單失敗：" + data.message);
+        }
+      } catch(err){
+        alert("系統錯誤：" + err);
+      }
+    });
+  </script>
+</body>
+</html>
