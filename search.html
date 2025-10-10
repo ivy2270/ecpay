@@ -4,7 +4,7 @@
 <link rel="icon" href="https://ymdd-image-tw.s3.ap-east-2.amazonaws.com/20250914/allon4-LOGO-02.png" type="image/png"/> 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>牙材券查詢系統</title>
+  <title>查詢系統</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,10 +146,10 @@ button[type="submit"] {
 <body>
   <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-2xl">
     <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
-      <h2 id="title" class="text-3xl sm:text-5xl font-bold text-center text-gray-800 mb-8">牙材券查詢系統</h2>
+      <h2 id="title" class="text-3xl sm:text-5xl font-bold text-center text-gray-800 mb-8">查詢系統</h2>
       <form id="myForm" class="space-y-4 sm:space-y-6">
         <div>
-          <label for="id" class="block mb-2 text-2xl font-medium text-gray-900">醫師姓名</label>
+          <label for="id" class="block mb-2 text-2xl font-medium text-gray-900">姓名</label>
           <input type="text" name="id" id="id" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 sm:p-4" placeholder="請輸入您的姓名" required inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
         </div>
 
@@ -179,7 +179,7 @@ button[type="submit"] {
   </div>
 
 <script>
-  const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxqMVQhfn6M2YTh4nXG3s7zhZ97bdSXmxi9bj4DDpNLRrvVzLlRBtFGIH0pFBqCPGp-/exec';
+  const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwCnRa24zj68LfRApA2-dmjzgACjrph0GKc3XGnvSqk1fWluRXF_6C1Ue8qOcxcf7M0Kw/exec';
 
   async function loadExamList() {
     try {
@@ -198,7 +198,7 @@ button[type="submit"] {
         examSelect.appendChild(opt);
       });
     } catch (err) {
-      alert('試卷清單載入失敗：' + err.message);
+      alert('清單載入失敗：' + err.message);
     }
   }
 
