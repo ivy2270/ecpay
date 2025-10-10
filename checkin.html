@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>醫師簽到/退系統</title>
+    <title>簽到/退系統</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -170,14 +170,14 @@
     }
 
     // --- 轉址邏輯 ---
-    const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxci7IGIikPyqFMpv1rO5QeoZyFEpvaThTwtdkoQ-F9qR93qNmLYfV0THk_70vXsLJO/exec";
+    const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyhrCv4oCmYFZuZNahcYBwVP7XK9MZ0IAkZVgZ1gXx5UIcpWoVOZmyxpf_Yk9h64Z_d/exec";
 
     async function redirectWithData(action) {
         const name = event.target.dataset.name;
         const id = event.target.dataset.id;
 
         if (!name || !id) {
-            alert('請先掃描 QR Code 取得醫師資料。');
+            alert('請先掃描 QR Code 取得資料。');
             return;
         }
         
@@ -193,6 +193,7 @@
 
 </body>
 </html>
+
 
 
 
