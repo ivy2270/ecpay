@@ -242,17 +242,18 @@ button[type="submit"] {
             const value = document.createElement("div");
             value.className = "field-value";
 
-            // 🔗 如果是「序號及QRCODE查詢」的 C、D 欄，轉超連結
-            if (exam === "序號及QRCODE查詢" && (index === 2 || index === 3) && cell) {
-              const link = document.createElement("a");
-              link.href = cell;
-              link.textContent = cell;
-              link.target = "_blank";
-              link.className = "text-blue-600 underline";
-              value.appendChild(link);
-            } else {
-              value.textContent = cell;
-            }
+			// 🌐 自動偵測網址並轉為超連結
+			if (cell && /^https?:\/\/[^\s]+$/i.test(cell.trim())) {
+			  const link = document.createElement("a");
+			  link.href = cell.trim();
+			  link.textContent = cell.trim();
+			  link.target = "_blank";
+			  link.className = "text-blue-600 underline";
+			  value.appendChild(link);
+			} else {
+			  value.textContent = cell;
+			}
+
 
             // 🟡 第三欄永遠黃色
             if (index === 2) {
