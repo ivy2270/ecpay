@@ -295,10 +295,10 @@ a.link {
         data.records.forEach(rec => {
           const card = document.createElement('div');
           const sheetColors = {
-            '醫師牙材券查詢':'border-yellow-400',
-            '牙材券消費記錄':'border-green-400',
-            '序號及QRCODE查詢':'border-blue-400',
-            '牙材券加購及得獎記錄':'border-purple-400'
+            '課程學分01':'border-yellow-400',
+            '課程學分02':'border-green-400',
+            '報名資料01':'border-blue-400',
+            '報名資料02':'border-purple-400'
           };
           const bgClass = sheetColors[rec.sheet] || 'border-gray-300';
           card.className = 'card ' + bgClass;
@@ -330,7 +330,7 @@ a.link {
             card.appendChild(label);
             card.appendChild(value);
 
-            if (t === '牙材卷使用金額') {
+            if (t === '學分數') {
               const num = parseFloat(String(valText).replace(/[^0-9.-]/g, ''));
               if (!isNaN(num)) sumAmount += num;
             }
@@ -342,7 +342,7 @@ a.link {
         if (sumAmount > 0) {
           const sumDiv = document.createElement('div');
           sumDiv.className = 'sum-card';
-          sumDiv.textContent = '牙材卷使用金額總計: ' + sumAmount;
+          sumDiv.textContent = '學分數總計: ' + sumAmount;
           resultDiv.appendChild(sumDiv);
         }
 
@@ -354,4 +354,5 @@ a.link {
   </script>
 </body>
 </html>
+
 
