@@ -172,7 +172,7 @@ a.link {
 </div>
 
 <script>
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbxaU1Zk3vrDwi8w0A5UdGhrJM1HNYSVxdZj1p1Ap4nCoWJmL16j5Uk9TWicspi9hGu2/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbzVq1fDnlmbzlR-fB3yXzNrBgfw0_0T1YIowupzrDnK7lzK-iXk-WjJfqsewMhWoHQx/exec';
 
 // 密碼眼睛切換
 const toggleBtn = document.getElementById('togglePassword');
@@ -194,10 +194,10 @@ toggleBtn.addEventListener('click', () => {
 
 // 工作表對應底色（框色 + 淡底）
 const sheetColors = {
-  '醫師牙材券查詢':'border-yellow-400 bg-yellow-50',
-  '牙材券消費記錄':'border-green-400 bg-green-50',
-  '序號及QRCODE查詢':'border-blue-400 bg-blue-50',
-  '牙材券加購及得獎記錄':'border-purple-400 bg-purple-50'
+  '課程學分01':'border-yellow-400 bg-yellow-50',
+  '課程學分02':'border-green-400 bg-green-50',
+  '報名資料01':'border-blue-400 bg-blue-50',
+  '報名資料02':'border-purple-400 bg-purple-50'
 };
 
 document.getElementById('queryForm').addEventListener('submit', async e=>{
@@ -255,7 +255,7 @@ document.getElementById('queryForm').addEventListener('submit', async e=>{
         card.appendChild(label);
         card.appendChild(value);
         
-        if(t==='牙材卷使用金額'){
+        if(t==='學分數'){
           const num = parseFloat(valText);
           if(!isNaN(num)) sumAmount += num;
         }
@@ -267,7 +267,7 @@ document.getElementById('queryForm').addEventListener('submit', async e=>{
     if(sumAmount>0){
       const sumDiv = document.createElement('div');
       sumDiv.className='sum-card';
-      sumDiv.textContent='牙材卷使用金額總計: '+sumAmount;
+      sumDiv.textContent='學分數總計: '+sumAmount;
       resultDiv.appendChild(sumDiv);
     }
     
@@ -278,3 +278,4 @@ document.getElementById('queryForm').addEventListener('submit', async e=>{
 </script>
 </body>
 </html>
+
